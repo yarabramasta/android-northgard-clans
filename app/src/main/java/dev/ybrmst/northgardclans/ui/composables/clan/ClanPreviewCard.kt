@@ -1,17 +1,13 @@
 package dev.ybrmst.northgardclans.ui.composables.clan
 
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.AssistChip
-import androidx.compose.material3.Card
+import androidx.compose.material3.ListItem
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
@@ -25,52 +21,46 @@ import dev.ybrmst.northgardclans.ui.theme.AppTheme
 
 @Composable
 fun ClanPreviewCard(clan: ClanPreviewData, modifier: Modifier = Modifier) {
-  return Card(
-    shape = RoundedCornerShape(8.dp),
-    modifier = modifier,
-  ) {
-    Column(
-      modifier = Modifier.padding(16.dp),
-    ) {
-      Row(
-        verticalAlignment = Alignment.CenterVertically,
-      ) {
-        Image(
-          painter = painterResource(clan.emblem),
-          contentDescription = clan.name,
-          modifier = Modifier
-            .size(48.dp)
+  return ListItem(
+    headlineContent = {
+      Text(
+        text = clan.nickname,
+        color = MaterialTheme.colorScheme.primary
+      )
+    },
+    supportingContent = { Text(text = clan.name) },
+    overlineContent = {
+      RichText(
+        text = clan.warchief,
+        color = MaterialTheme.colorScheme.outline,
+      )
+    },
+    leadingContent = {
+      Image(
+        painter = painterResource(id = clan.emblem),
+        contentDescription = clan.name,
+        modifier = Modifier.size(56.dp)
+      )
+    },
+    trailingContent = {
+      if (clan.bundleType == GameBundleType.DLC) {
+        AssistChip(
+          onClick = {/*TODO*/ },
+          shape = RoundedCornerShape(99.dp),
+          label = {
+            Text(
+              text = "DLC Clan",
+              style = MaterialTheme
+                .typography
+                .labelSmall
+                .copy(fontSize = 10.sp)
+            )
+          }
         )
-        Column(modifier = Modifier.padding(start = 16.dp, end = 32.dp)) {
-          Text(
-            text = clan.nickname,
-            style = MaterialTheme.typography.titleLarge,
-            color = MaterialTheme.colorScheme.primary,
-            modifier = Modifier.padding(bottom = 4.dp),
-          )
-          Text(
-            text = clan.name,
-            style = MaterialTheme.typography.bodyMedium,
-          )
-        }
-
-        if (clan.bundleType == GameBundleType.DLC) {
-          AssistChip(
-            shape = RoundedCornerShape(99.dp),
-            onClick = {},
-            label = {
-              Text(
-                text = "DLC",
-                style = MaterialTheme.typography.bodySmall.copy(
-                  fontSize = 10.sp
-                ),
-              )
-            },
-          )
-        }
       }
-    }
-  }
+    },
+    modifier = modifier
+  )
 }
 
 @Preview(showBackground = true)

@@ -10,7 +10,7 @@ val clans = listOf(
     nickname = "Eikthyrnir",
     name = "The Clan of the Stag",
     warchief = AnnotatedText(
-      text = "[brand] Brand",
+      text = "Led by [brand] Brand ",
       res = mapOf("[brand]" to R.drawable.ic_unit_warchief_brand)
     ),
     trait = AnnotatedText(
@@ -61,7 +61,7 @@ val clans = listOf(
     nickname = "Heidrun",
     name = "The Clan of the Goat",
     warchief = AnnotatedText(
-      text = "[harvald] Harvald",
+      text = "Led by [harvald] Harvald ",
       res = mapOf(
         "[harvald]" to R.drawable.ic_unit_warchief_harvald
       )
@@ -102,7 +102,7 @@ val clans = listOf(
     nickname = "Fenrir",
     name = "The Clan of the Wolf",
     warchief = AnnotatedText(
-      text = "[egil] Egil",
+      text = "Led by [egil] Egil ",
       res = mapOf(
         "[egil]" to R.drawable.ic_unit_warchief_egil
       )
@@ -160,7 +160,7 @@ val clans = listOf(
     nickname = "Huginn and Muninn",
     name = "The Clan of the Raven",
     warchief = AnnotatedText(
-      text = "[liv] Liv",
+      text = "Led by [liv] Liv ",
       res = mapOf(
         "[liv]" to R.drawable.ic_unit_warchief_liv
       )
@@ -205,7 +205,7 @@ val clans = listOf(
     nickname = "Bjarki",
     name = "The Clan of the Bear",
     warchief = AnnotatedText(
-      text = "[borgild] Borgild",
+      text = "Led by [borgild] Borgild ",
       res = mapOf(
         "[borgild]" to R.drawable.ic_unit_warchief_borgild
       )
@@ -253,7 +253,7 @@ val clans = listOf(
     nickname = "Slidrugtanni",
     name = "The Clan of the Boar",
     warchief = AnnotatedText(
-      text = "[svarn] Svarn",
+      text = "Led by [svarn] Svarn ",
       res = mapOf(
         "[svarn]" to R.drawable.ic_unit_warchief_svarn
       )
@@ -300,7 +300,7 @@ val clans = listOf(
     nickname = "Sváfnir",
     name = "The Clan of the Snake",
     warchief = AnnotatedText(
-      text = "[signy] Signy",
+      text = "Led by [signy] Signy ",
       res = mapOf(
         "[signy]" to R.drawable.ic_unit_warchief_signy
       )
@@ -341,7 +341,7 @@ val clans = listOf(
     nickname = "Nidhogg",
     name = "The Clan of the Dragon",
     warchief = AnnotatedText(
-      text = "[surtr] Surtr",
+      text = "Led by [surtr] Surtr ",
       res = mapOf(
         "[surtr]" to R.drawable.ic_unit_warchief_surtr
       )
@@ -391,7 +391,7 @@ val clans = listOf(
     nickname = "Svadilfari",
     name = "The Clan of the Horse",
     warchief = AnnotatedText(
-      text = "[brok] Brok and [eitria] Eitria",
+      text = "Led by [brok] Brok and [eitria] Eitria ",
       res = mapOf(
         "[brok]" to R.drawable.ic_unit_warchief_brok,
         "[eitria]" to R.drawable.ic_unit_warchief_eitria
@@ -448,7 +448,7 @@ val clans = listOf(
     nickname = "Lyngbakr",
     name = "The Clan of the Kraken",
     warchief = AnnotatedText(
-      text = "[kara] Kàra",
+      text = "Led by [kara] Kàra ",
       res = mapOf(
         "[kara]" to R.drawable.ic_unit_warchief_kara
       )
@@ -518,7 +518,7 @@ val clans = listOf(
     nickname = "Himminbrjotir",
     name = "The Clan of the Ox",
     warchief = AnnotatedText(
-      text = "[torfin] Torfin",
+      text = "Led by [torfin] Torfin ",
       res = mapOf(
         "[torfin]" to R.drawable.ic_unit_warchief_torfin
       )
@@ -572,7 +572,7 @@ val clans = listOf(
     nickname = "Brundr and Kaelinn",
     name = "The Clan of the Lynx",
     warchief = AnnotatedText(
-      text = "[mielikki] Mielikki",
+      text = "Led by [mielikki] Mielikki ",
       res = mapOf(
         "[mielikki]" to R.drawable.ic_unit_warchief_mielikki
       )
@@ -639,7 +639,7 @@ val clans = listOf(
     nickname = "Ratatoskr",
     name = "The Clan of the Squirrel",
     warchief = AnnotatedText(
-      text = "[andhrimnir] Andhrimnir",
+      text = "Led by [andhrimnir] Andhrimnir ",
       res = mapOf(
         "[andhrimnir]" to R.drawable.ic_unit_warchief_andhrimnir
       )

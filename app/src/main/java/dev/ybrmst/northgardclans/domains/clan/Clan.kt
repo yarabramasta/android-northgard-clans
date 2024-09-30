@@ -24,6 +24,7 @@ data class Clan(
     return ClanPreviewData(
       nickname = nickname,
       name = name,
+      warchief = warchief,
       emblem = emblem,
       bundleType = bundleType,
     )
