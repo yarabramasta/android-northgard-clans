@@ -19,4 +19,13 @@ data class Clan(
   val relic: AnnotatedText,
   @DrawableRes val emblem: Int,
   @DrawableRes val banner: Int,
-)
+) {
+  fun toPreviewData(): ClanPreviewData {
+    return ClanPreviewData(
+      nickname = nickname,
+      name = name,
+      emblem = emblem,
+      bundleType = bundleType,
+    )
+  }
+}

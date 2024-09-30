@@ -1,14 +1,14 @@
-package dev.ybrmst.northgardclans.ui.components
+package dev.ybrmst.northgardclans.ui.composables
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.text.InlineTextContent
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.vector.ImageVector
-import androidx.compose.ui.res.vectorResource
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.Placeholder
 import androidx.compose.ui.text.PlaceholderVerticalAlign
 import androidx.compose.ui.text.TextStyle
@@ -23,25 +23,22 @@ fun RichText(
   style: TextStyle = MaterialTheme.typography.bodySmall,
 ) {
   val inlineContent =
-    if (text.res == null) emptyMap()
-    else {
-      text.res.mapValues { (_, resId) ->
-        InlineTextContent(
-          placeholder = Placeholder(
-            width = 16.sp,
-            height = 16.sp,
-            placeholderVerticalAlign = PlaceholderVerticalAlign.Center
-          ),
-          children = {
-            Image(
-              imageVector = ImageVector.vectorResource(id = resId),
-              contentDescription = null,
-              modifier = Modifier.size(16.dp)
-            )
-          }
-        )
-      }
-    }
+    text.res?.mapValues { (name, resId) ->
+      InlineTextContent(
+        placeholder = Placeholder(
+          width = 16.sp,
+          height = 16.sp,
+          placeholderVerticalAlign = PlaceholderVerticalAlign.Top
+        ),
+        children = {
+          Image(
+            painter = painterResource(id = resId),
+            contentDescription = name,
+            modifier = Modifier.fillMaxSize()
+          )
+        }
+      )
+    } ?: emptyMap()
 
   Text(
     text = text.toAnnotatedString(),
