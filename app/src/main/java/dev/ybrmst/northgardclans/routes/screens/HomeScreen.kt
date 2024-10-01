@@ -9,7 +9,6 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.AccountCircle
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -87,7 +86,8 @@ fun HomeScreen(
         )
         Spacer(modifier = Modifier.padding(16.dp))
       }
-      items(clans) { clan ->
+      items(count = clans.size, key = { clans[it].nickname }) { idx ->
+        val clan = clans[idx]
         ClanPreviewCard(clan = clan.toPreviewData(),
           modifier = Modifier.clickable {
             navController.navigate(Screen.Details.createRoute(clan.nickname))
