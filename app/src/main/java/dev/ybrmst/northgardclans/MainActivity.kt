@@ -5,7 +5,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
-import dev.ybrmst.northgardclans.ui.screens.MainScreen
+import dev.ybrmst.northgardclans.routes.MainNavGraph
 import dev.ybrmst.northgardclans.ui.states.ClanViewModel
 import dev.ybrmst.northgardclans.ui.theme.AppTheme
 
@@ -18,7 +18,7 @@ class MainActivity : ComponentActivity() {
     enableEdgeToEdge()
     setContent {
       AppTheme {
-        MainScreen(viewModel = clanViewModel)
+        MainNavGraph(viewModel = clanViewModel)
       }
     }
   }

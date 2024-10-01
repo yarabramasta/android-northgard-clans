@@ -1,4 +1,4 @@
-package dev.ybrmst.northgardclans.ui.screens
+package dev.ybrmst.northgardclans.routes.screens
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
@@ -27,20 +27,20 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import dev.ybrmst.northgardclans.R
 import dev.ybrmst.northgardclans.ui.theme.AppTheme
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun AboutMeScreen() {
+fun AboutMeScreen(navController: NavController) {
   Scaffold(
     topBar = {
       TopAppBar(
-        title = {
-          Text(text = "About Me")
-        },
+        title = { Text(text = "About Me") },
         navigationIcon = {
-          IconButton(onClick = { }) {
+          IconButton(onClick = { navController.navigateUp() }) {
             Icon(
               imageVector = Icons.AutoMirrored.Filled.ArrowBack,
               contentDescription = "Back"
@@ -97,7 +97,9 @@ fun AboutMeScreen() {
 )
 @Composable
 fun AboutMeScreenPreview() {
+  val navController = rememberNavController()
+
   AppTheme {
-    AboutMeScreen()
+    AboutMeScreen(navController = navController)
   }
 }

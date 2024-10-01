@@ -1,6 +1,8 @@
 plugins {
   alias(libs.plugins.android.application)
   alias(libs.plugins.jetbrains.kotlin.android)
+  alias(libs.plugins.kotlin.serialization)
+  id("kotlin-parcelize")
 }
 
 android {
@@ -50,7 +52,6 @@ android {
 }
 
 dependencies {
-
   implementation(libs.androidx.core.ktx)
   implementation(libs.androidx.lifecycle.runtime.ktx)
   implementation(libs.androidx.activity.compose)
@@ -60,6 +61,8 @@ dependencies {
   implementation(libs.androidx.ui.tooling.preview)
   implementation(libs.androidx.material3)
   implementation(libs.androidx.ui.text.google.fonts)
+  implementation(libs.navigation.compose)
+  implementation(libs.kotlinx.serialization.json)
   implementation("androidx.core:core-splashscreen:1.0.1")
   implementation("androidx.compose.runtime:runtime-livedata:1.7.2")
   testImplementation(libs.junit)

@@ -8,6 +8,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.Placeholder
 import androidx.compose.ui.text.PlaceholderVerticalAlign
@@ -28,12 +29,13 @@ fun RichText(
         placeholder = Placeholder(
           width = 16.sp,
           height = 16.sp,
-          placeholderVerticalAlign = PlaceholderVerticalAlign.Top
+          placeholderVerticalAlign = PlaceholderVerticalAlign.AboveBaseline
         ),
         children = {
           Image(
             painter = painterResource(id = resId),
             contentDescription = name,
+            contentScale = ContentScale.FillBounds,
             modifier = Modifier.fillMaxSize()
           )
         }

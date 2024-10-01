@@ -21,4 +21,8 @@ class ClanViewModel : ViewModel() {
   private fun refresh() {
     _clans.value = repo.fetchClans().shuffled()
   }
+
+  fun getClanDetail(nickname: String): Clan {
+    return repo.fetchClanDetail(nickname)!!
+  }
 }

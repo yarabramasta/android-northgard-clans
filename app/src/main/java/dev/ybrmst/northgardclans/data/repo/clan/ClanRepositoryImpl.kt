@@ -6,4 +6,9 @@ import dev.ybrmst.northgardclans.domains.repo.ClanRepository
 
 class ClanRepositoryImpl : ClanRepository() {
   override fun fetchClans(): List<Clan> = clans
+
+  override fun fetchClanDetail(nickname: String): Clan? =
+    clans.find {
+      it.nickname == nickname
+    }
 }

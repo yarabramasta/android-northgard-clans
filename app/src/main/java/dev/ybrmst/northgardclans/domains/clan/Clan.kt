@@ -3,11 +3,6 @@ package dev.ybrmst.northgardclans.domains.clan
 import androidx.annotation.DrawableRes
 import dev.ybrmst.northgardclans.domains.shared.AnnotatedText
 
-enum class GameBundleType {
-  BASE,
-  DLC,
-}
-
 data class Clan(
   val nickname: String,
   val name: String,
@@ -29,4 +24,9 @@ data class Clan(
       bundleType = bundleType,
     )
   }
+}
+
+enum class GameBundleType {
+  BASE,
+  DLC,
 }

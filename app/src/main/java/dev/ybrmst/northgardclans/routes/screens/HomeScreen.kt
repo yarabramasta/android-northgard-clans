@@ -1,6 +1,7 @@
-package dev.ybrmst.northgardclans.ui.screens
+package dev.ybrmst.northgardclans.routes.screens
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -26,14 +27,18 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import dev.ybrmst.northgardclans.R
+import dev.ybrmst.northgardclans.routes.Screen
 import dev.ybrmst.northgardclans.ui.composables.clan.ClanPreviewCard
 import dev.ybrmst.northgardclans.ui.states.ClanViewModel
 import dev.ybrmst.northgardclans.ui.theme.AppTheme
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun MainScreen(
+fun HomeScreen(
+  navController: NavController,
   viewModel: ClanViewModel
 ) {
   val clans by viewModel.clans.observeAsState(initial = emptyList())
@@ -49,7 +54,7 @@ fun MainScreen(
           )
         },
         actions = {
-          IconButton(onClick = { /*TODO*/ }) {
+          IconButton(onClick = { navController.navigate(Screen.About.route) }) {
             Icon(
               imageVector = Icons.Rounded.AccountCircle,
               contentDescription = "About Me",
@@ -83,7 +88,11 @@ fun MainScreen(
         Spacer(modifier = Modifier.padding(16.dp))
       }
       items(clans) { clan ->
-        ClanPreviewCard(clan = clan.toPreviewData())
+        ClanPreviewCard(clan = clan.toPreviewData(),
+          modifier = Modifier.clickable {
+            navController.navigate(Screen.Details.createRoute(clan.nickname))
+          }
+        )
       }
     }
   }
@@ -95,7 +104,11 @@ fun MainScreen(
 )
 @Composable
 fun MainScreenPreview() {
+  val navController = rememberNavController()
   AppTheme {
-    MainScreen(viewModel = ClanViewModel())
+    HomeScreen(
+      navController = navController,
+      viewModel = ClanViewModel()
+    )
   }
 }
