@@ -2,6 +2,7 @@ package dev.ybrmst.northgardclans.ui.screens
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -73,13 +74,13 @@ fun MainScreen(
             .headlineLarge
             .copy(fontWeight = FontWeight.Bold),
           color = MaterialTheme.colorScheme.primary,
-          modifier = Modifier.padding(bottom = 8.dp)
         )
+        Spacer(modifier = Modifier.padding(8.dp))
         Text(
           text = "This is a list of clans that available in Northgard. Click on a clan to see more details.",
           color = MaterialTheme.colorScheme.outline,
-          modifier = Modifier.padding(bottom = 16.dp)
         )
+        Spacer(modifier = Modifier.padding(16.dp))
       }
       items(clans) { clan ->
         ClanPreviewCard(clan = clan.toPreviewData())

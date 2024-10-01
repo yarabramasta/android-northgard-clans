@@ -15,7 +15,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import dev.ybrmst.northgardclans.data.db.clans
 import dev.ybrmst.northgardclans.domains.clan.ClanPreviewData
-import dev.ybrmst.northgardclans.domains.clan.GameBundleType
 import dev.ybrmst.northgardclans.ui.composables.RichText
 import dev.ybrmst.northgardclans.ui.theme.AppTheme
 
@@ -43,7 +42,7 @@ fun ClanPreviewCard(clan: ClanPreviewData, modifier: Modifier = Modifier) {
       )
     },
     trailingContent = {
-      if (clan.bundleType == GameBundleType.DLC) {
+      if (clan.isDlc()) {
         AssistChip(
           onClick = {/*TODO*/ },
           shape = RoundedCornerShape(99.dp),

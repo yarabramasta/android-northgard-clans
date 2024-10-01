@@ -8,4 +8,6 @@ data class ClanPreviewData(
   val warchief: AnnotatedText,
   val emblem: Int,
   val bundleType: GameBundleType,
-)
+) {
+  fun isDlc(): Boolean = bundleType == GameBundleType.DLC
+}
