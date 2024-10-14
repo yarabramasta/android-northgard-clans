@@ -18,3 +18,9 @@ So yeah, I am looking into Northgard wiki and found an interesting format, yes i
 - [x] Button for redirecting to about me screen. About me screen should contains image, name, and email as in your Dicoding Account.
 
 ## Screenshoots
+
+<p>
+  <img src="https://github.com/user-attachments/assets/ab6ec355-e95e-4db0-b8d1-9ec79a0261f7" width="25%" />
+  <img src="https://github.com/user-attachments/assets/87c85954-2c1e-4db9-a99a-1f677d87c163" width="25%" />
+  <img src="https://github.com/user-attachments/assets/d739c81a-614a-4b9a-9ddb-51faed577d7f" width="25%" />
+</p>
